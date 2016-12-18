@@ -107,5 +107,12 @@
       (get-wild-and-tough)
     (release-wild-and-tough)))
 
+(defun get-wild--turn-on ()
+  (when buffer-file-name
+    (get-wild-mode +1)))
+
+;;;###autoload
+(define-global-minor-mode global-get-wild-mode get-wild-mode get-wild--turn-on)
+
 (provide 'get-wild)
 ;;; get-wild.el ends here
